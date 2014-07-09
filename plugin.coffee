@@ -52,5 +52,5 @@ module.exports = (env, callback) ->
   BrowserifyPlugin.fromFile = (filepath, callback) ->
     callback null, new BrowserifyPlugin filepath
 
-  env.registerContentPlugin 'scripts', '**/*.*(js|coffee)', BrowserifyPlugin
+  env.registerContentPlugin 'scripts', '**/!(lib)/*.*(js|coffee)', BrowserifyPlugin
   callback()
